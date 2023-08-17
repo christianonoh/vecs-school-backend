@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :set_user, only: %i[ show update destroy ]
+  before_action :set_user, only: %i[show update destroy]
 
   # GET /api/v1/users
   def index
@@ -44,15 +44,13 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def set_user
-    begin
-      @user = user.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      render json: { error: 'User not found' }, status: :not_found
-    end
-  end  
+    @user = user.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: 'User not found' }, status: :not_found
+  end
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit([:name,:description, :photo, :price, :teacher])
+    params.require(:user).permit(%i[name description photo price teacher])
   end
 end

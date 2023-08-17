@@ -1,5 +1,5 @@
 class Api::V1::CoursesController < ApplicationController
-  before_action :set_course, only: %i[ show update destroy ]
+  before_action :set_course, only: %i[show update destroy]
 
   # GET /api/v1/courses
   def index
@@ -44,15 +44,13 @@ class Api::V1::CoursesController < ApplicationController
   private
 
   def set_course
-    begin
-      @course = Course.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      render json: { error: 'Course not found' }, status: :not_found
-    end
-  end  
+    @course = Course.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: 'Course not found' }, status: :not_found
+  end
 
   # Only allow a list of trusted parameters through.
   def course_params
-    params.require(:course).permit([:name,:description, :photo, :price, :teacher])
+    params.require(:course).permit(%i[name description photo price teacher])
   end
 end
