@@ -1,5 +1,6 @@
 class Reservation < ApplicationRecord
-  validates :name, presence: true
-  validates :email, presence: true
-  validates :date, presence: true
+  belongs_to :user
+  belongs_to :course
+
+  validates :date, :city, presence: true
 end
