@@ -4,12 +4,12 @@ class Api::V1::CoursesController < ApplicationController
   # GET /api/v1/courses
   def index
     courses = Course.all
-    render json: courses, status: 200
+    render json: courses, each_serializer: CourseSerializer, status: :ok
   end
 
   # GET /api/v1/courses/1
   def show
-    render json: @course
+    render json: @course, serializer: CourseSerializer, status: :ok
   end
 
   # POST /api/v1/courses
@@ -17,7 +17,7 @@ class Api::V1::CoursesController < ApplicationController
     @course = Course.new(course_params)
 
     if @course.save
-      render json: @course, status: :created
+      render json: @course, serializer: CourseSerializer, status: :created
     else
       render json: { errors: @course.errors.full_messages }, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class Api::V1::CoursesController < ApplicationController
   # PATCH/PUT /api/v1/courses/1
   def update
     if @course.update(course_params)
-      render json: @course
+      render json: @course, serializer: CourseSerializer, status: :ok
     else
       render json: { errors: @course.errors.full_messages }, status: :unprocessable_entity
     end
