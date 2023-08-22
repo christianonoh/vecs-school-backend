@@ -4,12 +4,12 @@ class Api::V1::UsersController < ApplicationController
   # GET /api/v1/users
   def index
     @users = User.all
-    render json: @users, status: 200
+    render json: UserSerializer.new(@users).serializable_hash[:data].map { |entry| entry[:attributes] }, status: :ok
   end
 
   # GET /api/v1/users/1
   def show
-    render json: @user, status: 200
+    render json: @user, serializer: UserSerializer, status: :ok
   end
 
   # POST /api/v1/users
@@ -17,7 +17,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      render json: @user, status: :created
+      render json: @user, serializer: UserSerializer, status: :created
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class Api::V1::UsersController < ApplicationController
   # PATCH/PUT /api/v1/users/1
   def update
     if @user.update(user_params)
-      render json: @user
+      render json: @user, serializer: UserSerializer, status: :ok
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
