@@ -3,9 +3,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'current_user/', to: 'current_user#index'
       resources :users
-      resources :courses do
-        resources :reservations
-      end
+      resources :courses
+      resources :reservations
     end
   end
 
