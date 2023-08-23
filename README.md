@@ -199,7 +199,7 @@ VECS School uses RSpec for testing. To run the tests, follow these steps:
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-We're committed to continuously improving VECS School. If you encounter any issues or have suggestions for improvement, please [submit an issue](https://github.com/christianonoh/coin-mapper/issues).
+We're committed to continuously improving VECS School. If you encounter any issues or have suggestions for improvement, please [submit an issue](https://github.com/christianonoh/vecs-school-backend/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -214,10 +214,7 @@ If you like this project please give it a star ⭐️. Thanks for your support!
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-I would like to thank 
-- [Microverse](https://www.microverse.org/) for the opportunity.
-- Our Team
-- Special thank to [Murat Korkmaz](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) for providing the design guidelines.
+Thanks to all the VECS School contributors/team.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
