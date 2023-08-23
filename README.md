@@ -88,8 +88,6 @@ Welcome to the backend repository of VECS School's course booking system. This A
 
 - Check out VECS SCHOOL frontend app [here.](https://github.com/smunoz1988/vecs-school-frontend)
 
-In the video, we provide a walkthrough of the application, demonstrating how to create Categories and Expenses, modify them as you see fit and navigate the responsive design on different devices.
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>  
 
 <!-- GETTING STARTED -->
