@@ -1,11 +1,11 @@
 default: &default
   adapter: postgresql
-  encoding: utf8
-  pool: 5
+  encoding: unicode
+  # pool: 5
   # kindly replace your database user access
-  username: postgres
+  # username: postgres
   # kindly replace your database password
-  password: Temitope2604
+  # password: Temitope2604
 
 development:
   <<: *default

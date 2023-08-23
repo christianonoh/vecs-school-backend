@@ -1,9 +1,10 @@
 class Api::V1::ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[show update destroy]
+  before_action :authenticate_user!
 
   # GET /api/v1/reservations
   def index
-    reservations = Reservation.all
+    reservations = Reservation.where(user_id: current_user.id)
     render json: reservations, status: 200
   end
 
