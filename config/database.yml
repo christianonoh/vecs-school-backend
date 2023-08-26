@@ -1,16 +1,16 @@
 default: &default
   adapter: postgresql
-  encoding: unicode
-  # pool: 5
+  encoding: utf8
+  pool: 5
   # kindly replace your database user access
-  # username: postgres
+  username: postgres
   # kindly replace your database password
-  # password: Temitope2604
+  password: Temitope2604
 
 development:
   <<: *default
-  database: vecs_school_backend_development
+  database: vecs_school_backendv_development
 
 test:
   <<: *default
-  database: vecs_school_backend_test
+  database:  vecs_school_backendv_test
