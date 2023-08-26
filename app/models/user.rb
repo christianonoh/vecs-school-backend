@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :reservations, dependent: :destroy
   has_many :courses, through: :reservations
+
+  validates :name, :email, presence: true
 end
