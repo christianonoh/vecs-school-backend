@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :course do
-    name { 'Example Course' }
-    description { 'This is a course description.' }
-    photo { 'course.jpg' }
-    price { 50 }
-    teacher { 'John Doe' }
+    name { 'Redux' }
+    description { 'description for redux' }
+    photo { 'photo.png' }
+    price { 100.0 }
+    teacher { 'Elijah' }
   end
 end
