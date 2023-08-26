@@ -15,26 +15,25 @@ RSpec.describe Api::V1::ReservationsController, type: :request do
         reservations << Reservation.create!(
           city: 'Lagos',
           date: Date.today,
-          user_id: @user.id, 
+          user_id: @user.id,
           course_id: @course.id
         )
       end
-  
+
       get '/api/v1/reservations'
-  
+
       expect(response).to have_http_status(:ok)
       json_response = JSON.parse(response.body)
       expect(json_response.size).to eq(3)
     end
   end
-  
 
   describe 'GET /api/v1/reservations/:id' do
     it 'returns a single reservation' do
       reservation = Reservation.create!(
         city: 'Lagos',
         date: Date.today,
-        user_id: @user.id, 
+        user_id: @user.id,
         course_id: @course.id
       )
 
@@ -59,7 +58,7 @@ RSpec.describe Api::V1::ReservationsController, type: :request do
       reservation_params = { reservation: {
         city: 'Lagos',
         date: Date.today,
-        user_id: @user.id, 
+        user_id: @user.id,
         course_id: @course.id
       } }
 
@@ -76,7 +75,7 @@ RSpec.describe Api::V1::ReservationsController, type: :request do
       reservation = Reservation.create!(
         city: 'Lagos',
         date: Date.today,
-        user_id: @user.id, 
+        user_id: @user.id,
         course_id: @course.id
       )
       updated_city = 'Abuja'
@@ -95,7 +94,7 @@ RSpec.describe Api::V1::ReservationsController, type: :request do
       reservation = Reservation.create!(
         city: 'Lagos',
         date: Date.today,
-        user_id: @user.id, 
+        user_id: @user.id,
         course_id: @course.id
       )
 

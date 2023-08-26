@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Course, type: :model do
   before(:each) do
     # @user = User.create(name: 'Burger', email: 'burger@example.com', password: '123456')
-    @course = Course.new(name: "Redux", description: "description for redux", photo: "photo.png", price: 100.0, teacher: "Elijah")
+    @course = Course.new(name: 'Redux', description: 'description for redux', photo: 'photo.png', price: 100.0,
+                         teacher: 'Elijah')
   end
 
   describe 'initialization' do
@@ -12,7 +13,8 @@ RSpec.describe Course, type: :model do
     end
 
     it 'should have attributes' do
-      expect(@course).to have_attributes(name: "Redux", description: "description for redux", photo: "photo.png", price: 100.0, teacher: "Elijah")
+      expect(@course).to have_attributes(name: 'Redux', description: 'description for redux', photo: 'photo.png',
+                                         price: 100.0, teacher: 'Elijah')
     end
   end
 

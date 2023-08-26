@@ -25,7 +25,5 @@ RSpec.describe User, type: :model do
       expect(user).not_to be_valid
       expect(user.errors[:password]).to include("can't be blank")
     end
-
-
   end
 end

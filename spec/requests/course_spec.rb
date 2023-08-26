@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Api::V1::CoursesController, type: :request do
   include Devise::Test::IntegrationHelpers
   before(:each) do
-    @user = create(:user) # Assuming you have a user factory
+    @user = create(:user)
     login_as(@user, scope: :user)
   end
 
@@ -13,6 +13,7 @@ RSpec.describe Api::V1::CoursesController, type: :request do
 
       get '/api/v1/courses'
 
+      expect(courses.count).to eq(3)
       expect(response).to have_http_status(:ok)
       json_response = JSON.parse(response.body)
       expect(json_response.size).to eq(3)
@@ -39,7 +40,8 @@ RSpec.describe Api::V1::CoursesController, type: :request do
 
   describe 'POST /api/v1/courses' do
     it 'creates a new course' do
-      course_params = { course: { name: 'New Course', description: 'Course description', photo: 'photo.jpg', price: 100, teacher: 'John Doe' } }
+      course_params = { course: { name: 'New Course', description: 'Course description', photo: 'photo.jpg',
+                                  price: 100, teacher: 'John Doe' } }
 
       post '/api/v1/courses', params: course_params
 
