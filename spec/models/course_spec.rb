@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Course, type: :model do
   before(:each) do
-    # @user = User.create(name: 'Burger', email: 'burger@example.com', password: '123456')
-    @course = Course.new(name: 'Redux', description: 'description for redux', photo: 'photo.png', price: 100.0,
-                         teacher: 'Elijah')
+    @course = create(:course)
   end
 
   describe 'initialization' do

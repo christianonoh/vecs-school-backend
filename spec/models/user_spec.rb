@@ -4,7 +4,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'validations' do
     it 'is valid with a name' do
-      user = User.new(name: 'Burger', email: 'burger@example.com', password: '123456')
+      user = create(:user)
       expect(user).to be_valid
     end
 

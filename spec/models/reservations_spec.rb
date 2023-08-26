@@ -2,9 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Reservation, type: :model do
   before(:each) do
-    @user = User.create(name: 'Burger', email: 'burger@example.com', password: '123456')
-    @course = Course.create(name: 'Redux', description: 'description for redux', photo: 'photo.png', price: 100.0,
-                            teacher: 'Elijah')
+    @user = create(:user)
+    @course = create(:course)
     @reservation = Reservation.new(
       user_id: @user.id,
       course_id: @course.id,
