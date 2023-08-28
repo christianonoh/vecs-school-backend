@@ -4,7 +4,7 @@ class Api::V1::CoursesController < ApplicationController
 
   # GET /api/v1/courses
   def index
-    courses = Course.all
+    courses = Course.all.order(name: :asc)
     render json: courses, each_serializer: CourseSerializer, status: :ok
   end
 
