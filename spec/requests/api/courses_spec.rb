@@ -140,12 +140,12 @@ RSpec.describe '/api/v1/courses', type: :request do
     end
 
     path '/api/v1/courses/{id}'
-      delete 'Delete a course' do
-        tags 'Courses'
-        security [Bearer: []]
-        produces 'application/json'
-        parameter name: :id, in: :path, type: :integer
-        parameter name: :Authorization, in: :header, type: :string
+    delete 'Delete a course' do
+      tags 'Courses'
+      security [Bearer: []]
+      produces 'application/json'
+      parameter name: :id, in: :path, type: :integer
+      parameter name: :Authorization, in: :header, type: :string
 
       response '200', 'Course deleted' do
         schema type: :object,
