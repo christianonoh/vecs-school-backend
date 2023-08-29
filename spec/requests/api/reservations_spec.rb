@@ -1,6 +1,7 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/reservations', type: :request do
+  # rubocop:disable Metrics/BlockLength
   path '/api/reservations' do
     post 'Create a reservation' do
       tags 'Reservations'
@@ -65,4 +66,5 @@ RSpec.describe 'api/reservations', type: :request do
       end
     end
   end
+  # rubocop:enable Metrics/BlockLength
 end
