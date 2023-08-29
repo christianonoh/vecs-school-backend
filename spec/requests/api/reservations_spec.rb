@@ -1,9 +1,7 @@
-# rubocop:enable Metrics/BlockLength
 require 'swagger_helper'
 
 RSpec.describe 'api/reservations', type: :request do
   path '/api/reservations' do
-  end
     post 'Create a reservation' do
       tags 'Reservations'
       security [Bearer: []]
@@ -24,7 +22,7 @@ RSpec.describe 'api/reservations', type: :request do
             required: %i[course_id city date price]
           }
         },
-        required: [:reservation]B 
+        required: [:reservation]
       }
 
       response '201', 'Reservation created' do
@@ -68,4 +66,3 @@ RSpec.describe 'api/reservations', type: :request do
     end
   end
 end
-# rubocop:enable Metrics/BlockLength
