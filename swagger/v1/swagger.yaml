@@ -4,6 +4,90 @@ info:
   title: API V1
   version: v1
 paths:
+  "/signup":
+    post:
+      summary: Sign up
+      tags:
+      - Sign up
+      parameters: []
+      responses:
+        '200':
+          description: Signed up successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  email:
+                    type: string
+                  name:
+                    type: string
+                required:
+                - id
+                - email
+                - name
+        '422':
+          description: Something went wrong
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    email:
+                      type: string
+                    password:
+                      type: string
+  "/login":
+    post:
+      summary: Login
+      tags:
+      - Login
+      parameters: []
+      responses:
+        '200':
+          description: You are logged in.
+        '401':
+          description: Invalid login credentials.
+        '404':
+          description: User not found.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                    password:
+                      type: string
+  "/logout":
+    delete:
+      summary: Logout
+      tags:
+      - Logout
+      security:
+      - Bearer: []
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: You are logged out.
+        '401':
+          description: Invalid token.
   "/api/v1/courses":
     get:
       summary: Retrieve all courses
@@ -196,47 +280,6 @@ paths:
           description: You are not authorized to delete a course.
         '404':
           description: Not Found
-  "/signup":
-    post:
-      summary: Sign up
-      tags:
-      - Sign up
-      parameters: []
-      responses:
-        '200':
-          description: Signed up successfully.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  email:
-                    type: string
-                  name:
-                    type: string
-                required:
-                - id
-                - email
-                - name
-        '422':
-          description: Something went wrong
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                user:
-                  type: object
-                  properties:
-                    name:
-                      type: string
-                    email:
-                      type: string
-                    password:
-                      type: string
   "/api/v1/reservations":
     post:
       summary: Create a reservation
@@ -378,49 +421,6 @@ paths:
                   - course_id
                   - city
                   - date
-  "/login":
-    post:
-      summary: Login
-      tags:
-      - Login
-      parameters: []
-      responses:
-        '200':
-          description: You are logged in.
-        '401':
-          description: Invalid login credentials.
-        '404':
-          description: User not found.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                user:
-                  type: object
-                  properties:
-                    email:
-                      type: string
-                    password:
-                      type: string
-  "/logout":
-    delete:
-      summary: Logout
-      tags:
-      - Logout
-      security:
-      - Bearer: []
-      parameters:
-      - name: Authorization
-        in: header
-        schema:
-          type: string
-      responses:
-        '200':
-          description: You are logged out.
-        '401':
-          description: Invalid token.
 servers:
 - url: https://{defaultHost}
   variables:
