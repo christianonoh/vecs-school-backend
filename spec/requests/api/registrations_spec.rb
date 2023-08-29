@@ -2,7 +2,7 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/registrations', type: :request do
-  path '/users' do
+  path '/signup' do
     post 'Sign up' do
       tags 'Sign up'
       consumes 'application/json'
@@ -14,9 +14,9 @@ RSpec.describe 'api/registrations', type: :request do
           user: {
             type: :object,
             properties: {
+              name: { type: :string },
               email: { type: :string },
               password: { type: :string },
-              password_confirmation: { type: :string }
             }
           }
         }
@@ -27,20 +27,16 @@ RSpec.describe 'api/registrations', type: :request do
                properties: {
                  id: { type: :integer },
                  email: { type: :string },
-                 name: { type: :string },
-                 created_at: { type: :string },
-                 updated_at: { type: :string }
+                 name: { type: :string }
                },
-               required: %i[id email name created_at]
+               required: %i[id email name]
 
         let(:user) do
           {
             user: {
-              email: 'vitoesi@gmail.com',
               name: 'Elijah',
-              created_at: '2021-05-05T17:00:00.000Z',
-              updated_at: '2021-05-05T17:00:00.000Z',
-              admin: false
+              email: 'vitoesi@gmail.com',
+              password: '123456'
             }
           }
         end

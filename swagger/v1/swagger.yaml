@@ -4,7 +4,7 @@ info:
   title: API V1
   version: v1
 paths:
-  "/courses":
+  "/api/v1/courses":
     get:
       summary: Retrieve all courses
       tags:
@@ -117,7 +117,7 @@ paths:
                   - teacher
               required:
               - course
-  "/courses/{id}":
+  "/api/v1/courses/{id}":
     get:
       summary: Retrieve a specific course
       tags:
@@ -196,7 +196,7 @@ paths:
           description: You are not authorized to delete a course.
         '404':
           description: Not Found
-  "/users":
+  "/signup":
     post:
       summary: Sign up
       tags:
@@ -216,15 +216,10 @@ paths:
                     type: string
                   name:
                     type: string
-                  created_at:
-                    type: string
-                  updated_at:
-                    type: string
                 required:
                 - id
                 - email
                 - name
-                - created_at
         '422':
           description: Something went wrong
       requestBody:
@@ -236,13 +231,13 @@ paths:
                 user:
                   type: object
                   properties:
+                    name:
+                      type: string
                     email:
                       type: string
                     password:
                       type: string
-                    password_confirmation:
-                      type: string
-  "/api/reservations":
+  "/api/v1/reservations":
     post:
       summary: Create a reservation
       tags:
@@ -299,7 +294,6 @@ paths:
                 - course_id
                 - city
                 - date
-                - price
         '422':
           description: Unprocessable Entity
       requestBody:
@@ -317,21 +311,78 @@ paths:
                       type: string
                     city:
                       type: string
-                    price:
-                      type: number
-                      format: float
+                    user_id:
+                      type: integer
                   required:
+                  - course_id
+                  - date
+                  - city
+                  - user_id
+              required:
+              - reservation
+    get:
+      summary: List reservations
+      tags:
+      - Reservations
+      security:
+      - Bearer: []
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of reservations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    user_id:
+                      type: integer
+                    course_id:
+                      type: integer
+                    city:
+                      type: string
+                    date:
+                      type: integer
+                    course:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        photo:
+                          type: string
+                        teacher:
+                          type: string
+                        user_id:
+                          type: integer
+                        description:
+                          type: string
+                        price:
+                          type: number
+                          format: float
+                      required:
+                      - id
+                      - name
+                  required:
+                  - id
+                  - user_id
                   - course_id
                   - city
                   - date
-                  - price
-              required:
-              - reservation
-  "/users/sign_in":
+  "/login":
     post:
-      summary: Sign in
+      summary: Login
       tags:
-      - Sign in
+      - Login
       parameters: []
       responses:
         '200':
@@ -353,11 +404,11 @@ paths:
                       type: string
                     password:
                       type: string
-  "/users/sign_out":
+  "/logout":
     delete:
-      summary: Sign out
+      summary: Logout
       tags:
-      - Sign out
+      - Logout
       security:
       - Bearer: []
       parameters:

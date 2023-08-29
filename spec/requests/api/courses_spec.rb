@@ -1,8 +1,8 @@
 # rubocop:disable Metrics/BlockLength
 require 'swagger_helper'
 
-RSpec.describe 'api/courses', type: :request do
-  path '/courses' do
+RSpec.describe '/api/v1/courses', type: :request do
+  path '/api/v1/courses' do
     get 'Retrieve all courses' do
       tags 'Courses'
       security [Bearer: []]
@@ -100,7 +100,7 @@ RSpec.describe 'api/courses', type: :request do
     end
   end
 
-  path '/courses/{id}' do
+  path '/api/v1/courses/{id}' do
     get 'Retrieve a specific course' do
       tags 'Courses'
       security [Bearer: []]
@@ -139,12 +139,13 @@ RSpec.describe 'api/courses', type: :request do
       end
     end
 
-    delete 'Delete a course' do
-      tags 'Courses'
-      security [Bearer: []]
-      produces 'application/json'
-      parameter name: :id, in: :path, type: :integer
-      parameter name: :Authorization, in: :header, type: :string
+    path '/api/v1/courses/{id}'
+      delete 'Delete a course' do
+        tags 'Courses'
+        security [Bearer: []]
+        produces 'application/json'
+        parameter name: :id, in: :path, type: :integer
+        parameter name: :Authorization, in: :header, type: :string
 
       response '200', 'Course deleted' do
         schema type: :object,

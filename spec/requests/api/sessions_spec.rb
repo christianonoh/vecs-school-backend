@@ -1,9 +1,9 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/sessions', type: :request do
-  path '/users/sign_in' do
-    post 'Sign in' do
-      tags 'Sign in'
+  path '/login' do
+    post 'Login' do
+      tags 'Login'
       consumes 'application/json'
       produces 'application/json'
 
@@ -37,16 +37,16 @@ RSpec.describe 'api/sessions', type: :request do
     end
   end
 
-  path '/users/sign_out' do
-    delete 'Sign out' do
-      tags 'Sign out'
+  path '/logout' do
+    delete 'Logout' do
+      tags 'Logout'
       security [Bearer: []]
       consumes 'application/json'
       produces 'application/json'
       parameter name: :Authorization, in: :header, type: :string
 
       response '200', 'You are logged out.' do
-        let(:user) { { user: { email: 'vitoesi@gmail.com', password: 'password' } } }
+        let(:user) { { user: { email: 'vitoesi@gmail.com', password: '123456' } } }
         run_test!
       end
 
