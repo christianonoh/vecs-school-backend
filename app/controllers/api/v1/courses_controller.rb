@@ -2,7 +2,6 @@ class Api::V1::CoursesController < ApplicationController
   before_action :set_course, only: %i[show update destroy]
   before_action :authenticate_user!
 
-  # GET /api/v1/courses
   def index
     courses = Course.all.order(name: :asc)
     render json: courses, each_serializer: CourseSerializer, status: :ok
