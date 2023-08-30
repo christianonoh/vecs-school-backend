@@ -153,7 +153,7 @@ VECS School uses RSpec for testing. To run the tests, follow these steps:
   bundle exec rspec spec/models 
   bundle exec rspec spec/controllers
 ```
-- This will execute all the tests in the `spec` directory and provide you with the results.
+- This will execute all the tests for the models and controllers directory and provide you with the results.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
