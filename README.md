@@ -132,6 +132,7 @@ EDITOR="code --wait" rails credentials:edit
 ```sh
 rails db:create
 rails db:migrate
+rails db:seed
 ```
 ### Usage
 Start the Rails server to run the application locally.
@@ -149,9 +150,10 @@ VECS School uses RSpec for testing. To run the tests, follow these steps:
 
 - **Run Tests:** Use the following command to run the tests.
 ```sh
-  rspec
+  bundle exec rspec spec/models 
+  bundle exec rspec spec/controllers
 ```
-- This will execute all the tests in the `spec` directory and provide you with the results.
+- This will execute all the tests for the models and controllers directory and provide you with the results.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
