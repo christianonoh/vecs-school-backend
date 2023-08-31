@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://localhost:5173' # or 'http://localhost:3000' for consistency
+    origins 'https://vecs-school.onrender.com' # or 'http://localhost:3000' for consistency
     resource '*',
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head],
