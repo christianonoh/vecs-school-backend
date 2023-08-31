@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="./logo.png" alt="logo" width="300"  height="auto" />
+  <img src="./app/assets/logo.png" alt="logo" width="300"  height="auto" />
   <br/>
 
   <!-- <h3><b>VECS SCHOOL BACKEND</b></h3> -->
@@ -16,13 +16,16 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [🚀 Link to Live Demo](#liveDemo)
   - [🚀 Link to frontend app](#live-demo)
+  - [🚀 Link to VECS School Kanban Board](#kanban)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
+- [👥 Team](#team)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -83,12 +86,27 @@ Welcome to the backend repository of VECS School's course booking system. This A
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
+liveDemo
+
+## 🚀 Live Demo<a name="liveDemo"></a>
+
+- Check out VECS SCHOOL app [here.](https://vecs-school.onrender.com)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Link to Frontend<a name="live-demo"></a>
 
 - Check out VECS SCHOOL frontend app [here.](https://github.com/smunoz1988/vecs-school-frontend)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Link to Kanban Board <a name="kanban"></a>
+
+- Check out our kanban board [here.](https://github.com/users/christianonoh/projects/6/views/1)
+
+- Check out our initial kanban board <a href='./app/assets/kanban0.png'>Here</a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -156,6 +174,10 @@ VECS School uses RSpec for testing. To run the tests, follow these steps:
 - This will execute all the tests for the models and controllers directory and provide you with the results.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Team members<a name="team"></a>
+
+- Final number of team members: 4. Details on [Authors](#authors)
 
 <!-- AUTHORS -->
 
