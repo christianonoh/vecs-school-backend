@@ -425,4 +425,4 @@ servers:
 - url: https://{defaultHost}
   variables:
     defaultHost:
-      default: www.example.com
+      default: vecsschool.onrender.com
