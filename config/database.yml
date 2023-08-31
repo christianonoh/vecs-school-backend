@@ -1,0 +1,11 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+  database: vecs_school_backend_development
+
+test:
+  <<: *default
+  database: vecs_school_backend_test
