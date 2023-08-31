@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="./logo.png" alt="logo" width="300"  height="auto" />
+  <img src="./app/assets/logo.png" alt="logo" width="300"  height="auto" />
   <br/>
 
   <!-- <h3><b>VECS SCHOOL BACKEND</b></h3> -->
@@ -96,7 +96,7 @@ Welcome to the backend repository of VECS School's course booking system. This A
 
 - Check out our kanban board [here.](https://github.com/users/christianonoh/projects/6/views/1)
 
-- Check out our initial kanban board <a href='./src/assets/kanban0.png'>Here</a>
+- Check out our initial kanban board <a href='./app/assets/kanban0.png'>Here</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
