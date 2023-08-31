@@ -16,6 +16,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [🚀 Link to Live Demo](#liveDemo)
   - [🚀 Link to frontend app](#live-demo)
   - [🚀 Link to VECS School Kanban Board](#kanban)
 - [💻 Getting Started](#getting-started)
@@ -85,6 +86,13 @@ Welcome to the backend repository of VECS School's course booking system. This A
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
+liveDemo
+
+## 🚀 Live Demo<a name="liveDemo"></a>
+
+- Check out VECS SCHOOL app [here.](https://vecs-school.onrender.com)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Link to Frontend<a name="live-demo"></a>
 
