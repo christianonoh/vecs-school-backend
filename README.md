@@ -38,7 +38,7 @@
 
 # 📚💻🌐 VECS SCHOOL BACKEND <a name="about-project"></a>
 
-Welcome to the backend repository of VECS School's course booking system. This API-only project, built with Ruby on Rails, powers the seamless booking of courses by enabling users to specify their city and preferred dates. It offers a comprehensive set of endpoints, ensuring efficient communication between frontend applications and the backend server.
+Welcome to the backend repository of VECS School's course booking system. This API-only project, built with Ruby on Rails, powers the seamless booking of courses by enabling users to specify their city and preferred dates. It offers a comprehensive set of endpoints, ensuring efficient communication between frontend applications and the backend server..
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -214,7 +214,7 @@ VECS School uses RSpec for testing. To run the tests, follow these steps:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **City and Date Filtering:** Courses can be filtered based on city and available dates, ensuring users find courses that match their preferences.
-- [ ] **Feedback Mechanism:** Users can provide feedback on courses they've attended, helping improve the overall course quality.
+- [ ] **Feedback Mechanism:** Users can provide feedback on courses they've attended, helping improve the overall course quality..
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
